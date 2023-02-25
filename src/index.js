@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // your code here
-  document.querySelector('form').addEventListener('submit', (e) => {
+  let form = document.querySelector('form')
+  form.addEventListener('submit', (e) => {
     e.preventDefault()
     addToDo(e.target.new_task_description.value);
+    form.reset()
   });
 });
 
@@ -17,5 +19,3 @@ function addToDo(item){
   p.appendChild(btn)
   document.querySelector('#tasks').appendChild(p)
 }
-
-// need to remove previos entry from task input 
